@@ -9,7 +9,7 @@ import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output } from '
 export class ShoppingEditComponent implements OnInit {
   @ViewChild('nameInput') nameInput: ElementRef;
   @ViewChild('amountInput') amountInput: ElementRef;
-  @Output() ingridientAdded = new EventEmitter<Ingredients>();
+  @Output() ingredientAdded = new EventEmitter<Ingredients>();
   constructor() { }
 
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class ShoppingEditComponent implements OnInit {
     const ingName = this.nameInput.nativeElement.value;
     const ingAmount = this.amountInput.nativeElement.value;
     const newIngredient = new Ingredients(ingName, ingAmount);
-    this.ingridientAdded.emit(newIngredient);
+    this.ingredientAdded.emit(newIngredient);
   }
   deleteIng() {
 
